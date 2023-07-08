@@ -96,6 +96,12 @@ public class PlacerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        lazyItemHandler.invalidate();
+    }
+
+    @Override
     public Component getDisplayName() {
         return Component.translatable("block.moreautomationmod.placer");
     }
