@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "moreautomationmod:block/harvester_front",
+    "side": "moreautomationmod:block/harvester_side"
+  }
+}

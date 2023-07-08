@@ -4,6 +4,8 @@ import dev.abidux.moreautomation.block.ModBlocks;
 import dev.abidux.moreautomation.block.entities.ModBlockEntities;
 import dev.abidux.moreautomation.gui.ModMenuTypes;
 import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchScreen;
+import dev.abidux.moreautomation.gui.harvester.HarvesterMenu;
+import dev.abidux.moreautomation.gui.harvester.HarvesterScreen;
 import dev.abidux.moreautomation.gui.placer.PlacerScreen;
 import dev.abidux.moreautomation.item.ModCreativeTabs;
 import dev.abidux.moreautomation.item.ModItems;
@@ -22,6 +24,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(MoreAutomationMod.MOD_ID)
 public class MoreAutomationMod {
+
+    // TODO
+    // adapt for melon, pumpkin, berry bush...
 
     public static final String MOD_ID = "moreautomationmod";
     public MoreAutomationMod() {
@@ -46,6 +51,7 @@ public class MoreAutomationMod {
             event.accept(ModItems.AUTO_WORKBENCH::get);
         } else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
             event.accept(ModItems.PLACER::get);
+            event.accept(ModItems.HARVESTER::get);
         }
     }
 
@@ -59,6 +65,7 @@ public class MoreAutomationMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.AUTO_WORKBENCH.get(), AutoWorkbenchScreen::new);
             MenuScreens.register(ModMenuTypes.PLACER.get(), PlacerScreen::new);
+            MenuScreens.register(ModMenuTypes.HARVESTER.get(), HarvesterScreen::new);
         }
     }
 }

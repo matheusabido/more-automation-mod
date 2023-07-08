@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "H": {
+      "item": "minecraft:iron_hoe"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GHG",
+    "GGG"
+  ],
+  "result": {
+    "item": "moreautomationmod:harvester"
+  },
+  "show_notification": true
+}

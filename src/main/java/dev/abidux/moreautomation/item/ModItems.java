@@ -14,5 +14,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> AUTO_WORKBENCH = ITEMS.register("auto_workbench", () -> new BlockItem(ModBlocks.AUTO_WORKBENCH.get(), new Item.Properties()));
     public static final RegistryObject<Item> PLACER = ITEMS.register("placer", () -> new BlockItem(ModBlocks.PLACER.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HARVESTER = ITEMS.register("harvester", () -> new BlockItem(ModBlocks.HARVESTER.get(), new Item.Properties()));
 
 }

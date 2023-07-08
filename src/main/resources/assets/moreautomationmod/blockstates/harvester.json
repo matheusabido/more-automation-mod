@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "moreautomationmod:block/harvester_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "moreautomationmod:block/harvester",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "moreautomationmod:block/harvester"
+    },
+    "facing=south": {
+      "model": "moreautomationmod:block/harvester",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "moreautomationmod:block/harvester_vertical"
+    },
+    "facing=west": {
+      "model": "moreautomationmod:block/harvester",
+      "y": 270
+    }
+  }
+}

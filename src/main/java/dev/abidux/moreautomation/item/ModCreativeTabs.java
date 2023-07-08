@@ -18,6 +18,7 @@ public class ModCreativeTabs {
                     .displayItems((p, output) -> {
                         output.accept(ModItems.AUTO_WORKBENCH::get);
                         output.accept(ModItems.PLACER::get);
+                        output.accept(ModItems.HARVESTER::get);
                     })
                     .build());
 

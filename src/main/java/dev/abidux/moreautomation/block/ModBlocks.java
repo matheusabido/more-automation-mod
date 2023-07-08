@@ -2,6 +2,7 @@ package dev.abidux.moreautomation.block;
 
 import dev.abidux.moreautomation.MoreAutomationMod;
 import dev.abidux.moreautomation.block.custom.AutoWorkbenchBlock;
+import dev.abidux.moreautomation.block.custom.HarvesterBlock;
 import dev.abidux.moreautomation.block.custom.PlacerBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
@@ -14,5 +15,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> AUTO_WORKBENCH = BLOCKS.register("auto_workbench", AutoWorkbenchBlock::new);
     public static final RegistryObject<Block> PLACER = BLOCKS.register("placer", PlacerBlock::new);
+
+    public static final RegistryObject<Block> HARVESTER = BLOCKS.register("harvester", HarvesterBlock::new);
 
 }
