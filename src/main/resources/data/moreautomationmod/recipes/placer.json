@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    }
+  },
+  "pattern": [
+    "III",
+    "IPI",
+    "III"
+  ],
+  "result": {
+    "item": "moreautomationmod:placer"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "moreautomationmod:block/placer_front",
+    "side": "moreautomationmod:block/placer_side"
+  }
+}
