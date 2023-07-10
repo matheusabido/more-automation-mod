@@ -172,11 +172,26 @@ public class AutoWorkbenchBlockEntity extends BlockEntity implements MenuProvide
             int needs = itemCount.get(stack.getItem());
             int amount = Math.min(stack.getCount(), needs);
             itemHandler.extractItem(i, amount, false);
+            if (!stack.getCraftingRemainingItem().isEmpty()) {
+                if (!tryInserting(stack.getCraftingRemainingItem())) {
+                    Containers.dropItemStack(level, getBlockPos().getX(), getBlockPos().getY(), getBlockPos().getZ(), stack.getCraftingRemainingItem());
+                }
+            }
             int remaining = needs - amount;
             if (remaining > 0) {
                 itemCount.put(stack.getItem(), remaining);
             } else itemCount.remove(stack.getItem());
         }
+    }
+
+    private boolean tryInserting(ItemStack stack) {
+        for (int i = 9; i < 18; i++) {
+            if (itemHandler.insertItem(i, stack, true).isEmpty()) {
+                itemHandler.insertItem(i, stack, false);
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean hasMaterial() {
