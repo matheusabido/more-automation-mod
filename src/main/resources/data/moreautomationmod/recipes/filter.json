@@ -5,20 +5,20 @@
     "I": {
       "item": "minecraft:iron_ingot"
     },
-    "R": {
-      "item": "minecraft:redstone"
+    "C": {
+      "item": "minecraft:comparator"
     },
-    "P": {
-      "tag": "minecraft:planks"
+    "H": {
+      "item": "minecraft:hopper"
     }
   },
   "pattern": [
-    "PIP",
-    "RRR",
-    "PIP"
+    "ICI",
+    "IHI",
+    "III"
   ],
   "result": {
-    "item": "moreautomationmod:auto_workbench"
+    "item": "moreautomationmod:filter"
   },
   "show_notification": true
 }

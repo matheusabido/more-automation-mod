@@ -1,5 +1,6 @@
 package dev.abidux.moreautomation.block.entities;
 
+import dev.abidux.moreautomation.block.ModBlockEntities;
 import dev.abidux.moreautomation.block.custom.PlacerBlock;
 import dev.abidux.moreautomation.gui.placer.PlacerMenu;
 import net.minecraft.core.BlockPos;

@@ -1,7 +1,8 @@
-package dev.abidux.moreautomation.block.entities;
+package dev.abidux.moreautomation.block;
 
 import dev.abidux.moreautomation.MoreAutomationMod;
 import dev.abidux.moreautomation.block.ModBlocks;
+import dev.abidux.moreautomation.block.entities.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,5 +20,10 @@ public class ModBlockEntities {
 
     public static final RegistryObject<BlockEntityType<HarvesterBlockEntity>> HARVESTER = BLOCK_ENTITIES.register("harvester",
             () -> BlockEntityType.Builder.of(HarvesterBlockEntity::new, ModBlocks.HARVESTER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<TransporterBlockEntity>> TRANSPORTER = BLOCK_ENTITIES.register("transporter",
+            () -> BlockEntityType.Builder.of(TransporterBlockEntity::new, ModBlocks.TRANSPORTER.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<FilterBlockEntity>> FILTER = BLOCK_ENTITIES.register("filter",
+            () -> BlockEntityType.Builder.of(FilterBlockEntity::new, ModBlocks.FILTER.get()).build(null));
 
 }

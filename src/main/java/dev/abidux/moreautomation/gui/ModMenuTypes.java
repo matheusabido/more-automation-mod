@@ -2,6 +2,7 @@ package dev.abidux.moreautomation.gui;
 
 import dev.abidux.moreautomation.MoreAutomationMod;
 import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchMenu;
+import dev.abidux.moreautomation.gui.filter.FilterMenu;
 import dev.abidux.moreautomation.gui.harvester.HarvesterMenu;
 import dev.abidux.moreautomation.gui.placer.PlacerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -22,5 +23,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<HarvesterMenu>> HARVESTER = MENU_TYPES.register("harvester",
             () -> IForgeMenuType.create(HarvesterMenu::new));
+
+    public static final RegistryObject<MenuType<FilterMenu>> FILTER = MENU_TYPES.register("filter",
+            () -> IForgeMenuType.create(FilterMenu::new));
 
 }

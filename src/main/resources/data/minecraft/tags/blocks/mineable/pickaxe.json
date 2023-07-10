@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "moreautomationmod:placer",
-    "moreautomationmod:harvester"
+    "moreautomationmod:harvester",
+    "moreautomationmod:transporter",
+    "moreautomationmod:filter"
   ]
 }

@@ -1,5 +1,7 @@
 {
-  "block.moreautomationmod.auto_workbench": "Auto Workbench",
+  "block.moreautomationmod.auto_workbench": "Auto workbench",
   "block.moreautomationmod.placer": "Placer",
-  "block.moreautomationmod.harvester": "Harvester"
+  "block.moreautomationmod.harvester": "Harvester",
+  "block.moreautomationmod.transporter": "Transporter",
+  "block.moreautomationmod.filter": "Filter"
 }

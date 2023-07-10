@@ -1,5 +1,6 @@
 package dev.abidux.moreautomation.block.entities;
 
+import dev.abidux.moreautomation.block.ModBlockEntities;
 import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchMenu;
 import dev.abidux.moreautomation.wrapper.HopperWrapper;
 import net.minecraft.core.BlockPos;
@@ -8,10 +9,6 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -25,7 +22,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -35,7 +31,6 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -204,6 +199,7 @@ public class AutoWorkbenchBlockEntity extends BlockEntity implements MenuProvide
     private HashMap<Item, Integer> countIngredients(NonNullList<Ingredient> ingredients) {
         HashMap<Item, Integer> map = new HashMap<>();
         for (Ingredient ingredient : ingredients) {
+            if (ingredient.getItems().length == 0) continue;
             ItemStack stack = ingredient.getItems()[0];
             map.put(stack.getItem(), map.getOrDefault(stack.getItem(), 0) + stack.getCount());
         }

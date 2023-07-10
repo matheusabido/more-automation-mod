@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "moreautomationmod:block/transporter",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "moreautomationmod:block/transporter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "moreautomationmod:block/transporter"
+    },
+    "facing=south": {
+      "model": "moreautomationmod:block/transporter",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "moreautomationmod:block/transporter",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "moreautomationmod:block/transporter",
+      "y": 270
+    }
+  }
+}

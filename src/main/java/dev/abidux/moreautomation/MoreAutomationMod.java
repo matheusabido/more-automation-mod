@@ -1,19 +1,17 @@
 package dev.abidux.moreautomation;
 
 import dev.abidux.moreautomation.block.ModBlocks;
-import dev.abidux.moreautomation.block.entities.ModBlockEntities;
+import dev.abidux.moreautomation.block.ModBlockEntities;
 import dev.abidux.moreautomation.gui.ModMenuTypes;
 import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchScreen;
-import dev.abidux.moreautomation.gui.harvester.HarvesterMenu;
+import dev.abidux.moreautomation.gui.filter.FilterScreen;
 import dev.abidux.moreautomation.gui.harvester.HarvesterScreen;
 import dev.abidux.moreautomation.gui.placer.PlacerScreen;
 import dev.abidux.moreautomation.item.ModCreativeTabs;
 import dev.abidux.moreautomation.item.ModItems;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -24,9 +22,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(MoreAutomationMod.MOD_ID)
 public class MoreAutomationMod {
-
-    // TODO
-    // adapt for melon, pumpkin, berry bush...
 
     public static final String MOD_ID = "moreautomationmod";
     public MoreAutomationMod() {
@@ -40,19 +35,9 @@ public class MoreAutomationMod {
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-    }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(ModItems.AUTO_WORKBENCH::get);
-        } else if (event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
-            event.accept(ModItems.PLACER::get);
-            event.accept(ModItems.HARVESTER::get);
-        }
     }
 
     @SubscribeEvent
@@ -66,6 +51,7 @@ public class MoreAutomationMod {
             MenuScreens.register(ModMenuTypes.AUTO_WORKBENCH.get(), AutoWorkbenchScreen::new);
             MenuScreens.register(ModMenuTypes.PLACER.get(), PlacerScreen::new);
             MenuScreens.register(ModMenuTypes.HARVESTER.get(), HarvesterScreen::new);
+            MenuScreens.register(ModMenuTypes.FILTER.get(), FilterScreen::new);
         }
     }
 }
