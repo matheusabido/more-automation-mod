@@ -1,23 +1,23 @@
 {
-  "parent": "minecraft:block/block",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "bottom": "moreautomationmod:block/transporter_back",
-    "side": "moreautomationmod:block/transporter_side",
-    "top": "moreautomationmod:block/transporter_side",
-    "front": "moreautomationmod:block/transporter_front",
-    "particle": "moreautomationmod:block/transporter_front"
+    "0": "moreautomationmod:block/transporter_arrow_up",
+    "1": "moreautomationmod:block/transporter_back",
+    "2": "moreautomationmod:block/transporter_front",
+    "3": "moreautomationmod:block/transporter_arrow_side",
+    "particle": "moreautomationmod:block/transporter_arrow_up"
   },
   "elements": [
     {
-      "from": [ 0, 0, 0 ],
-      "to": [ 16, 16, 16 ],
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
       "faces": {
-        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#top", "cullface": "down" },
-        "up":    { "uv": [ 0, 16, 16, 0 ], "texture": "#top", "cullface": "up" },
-        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#front", "cullface": "north" },
-        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom", "cullface": "south" },
-        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side", "cullface": "west" },
-        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side", "cullface": "east" }
+        "north": {"uv": [0, 0, 16, 16], "texture": "#2"},
+        "east": {"uv": [16, 16, 0, 0], "texture": "#3"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+        "up": {"uv": [16, 16, 0, 0], "texture": "#0"},
+        "down": {"uv": [0, 0, 16, 16], "texture": "#0"}
       }
     }
   ]
