@@ -3,5 +3,12 @@
   "block.moreautomationmod.placer": "Placer",
   "block.moreautomationmod.harvester": "Harvester",
   "block.moreautomationmod.transporter": "Transporter",
-  "block.moreautomationmod.filter": "Filter"
+  "block.moreautomationmod.filter": "Filter",
+
+  "messages.press_shift_for_more": "Press SHIFT for more info",
+  "messages.auto_workbench_guide": "Crafts items automatically.\nThe left grid is used to set the recipe, the right grid is the storage.",
+  "messages.placer_guide": "Places blocks right in front of it.\nNeeds redstone signal.",
+  "messages.harvester_guide": "Harvests the crop (or melon, pumpkin and sweet berries) right in front of it.\nNeeds redstone signal.",
+  "messages.transporter_guide": "Transports items from the container in front of it to the container behind it.",
+  "messages.filter_guide": "Filters items.\nThe yellow slot is for configuration, the other slot will accept only the configured item."
 }
