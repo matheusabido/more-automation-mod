@@ -18,10 +18,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -50,22 +48,48 @@ public class HarvesterBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     public void harvest(BlockState state, ServerLevel level, BlockPos pos) {
-        BlockPos forward = pos.relative(state.getValue(HarvesterBlock.FACING));
-        BlockState forwardState = level.getBlockState(forward);
-        List<ItemStack> items = null;
-        if (forwardState.getBlock() instanceof CropBlock) {
-            items = Block.getDrops(forwardState, level, pos, null);
-            BlockState newState = getReplant(items);
-            level.setBlock(forward, newState, 2);
-        } else if (forwardState.is(Blocks.MELON) || forwardState.is(Blocks.PUMPKIN) || forwardState.is(Blocks.SWEET_BERRY_BUSH)) {
-            items = Block.getDrops(forwardState, level, pos, null);
-            BlockState newState = forwardState.is(Blocks.SWEET_BERRY_BUSH) ? forwardState.setValue(SweetBerryBushBlock.AGE, Math.min(forwardState.getValue(SweetBerryBushBlock.AGE), 1)) : Blocks.AIR.defaultBlockState();
-            level.setBlock(forward, newState, 2);
+        BlockPos forwardPosition = pos.relative(state.getValue(HarvesterBlock.FACING));
+        BlockState forwardState = level.getBlockState(forwardPosition);
+        if (!shouldHarvest(forwardState)) return;
+        List<ItemStack> dropsList = getDrops(forwardState, level, pos);
+        if (dropsList == null) return;
+        BlockState newState = getNewState(forwardState, dropsList);
+        level.setBlock(forwardPosition, newState, 2);
+        storeItems(level, forwardPosition, dropsList);
+        level.playSound(null, pos, SoundEvents.CROP_BREAK, SoundSource.BLOCKS);
+    }
+
+    boolean shouldHarvest(BlockState state) {
+        Block block = state.getBlock();
+        return block instanceof StemGrownBlock
+                || (block instanceof CropBlock && state.getValue(CropBlock.AGE) == CropBlock.MAX_AGE)
+                || (block instanceof SweetBerryBushBlock && state.getValue(SweetBerryBushBlock.AGE) == SweetBerryBushBlock.MAX_AGE)
+                || state.is(Blocks.SUGAR_CANE)
+                || state.is(Blocks.BAMBOO);
+    }
+
+    private List<ItemStack> getDrops(BlockState state, ServerLevel level, BlockPos pos) {
+        if (state.getBlock() instanceof CropBlock || state.is(Blocks.MELON) || state.is(Blocks.PUMPKIN) || state.is(Blocks.SWEET_BERRY_BUSH) || state.is(Blocks.SUGAR_CANE) || state.is(Blocks.BAMBOO)) return Block.getDrops(state, level, pos, null);
+        return null;
+    }
+
+    private BlockState getNewState(BlockState state, List<ItemStack> drops) {
+        if (state.is(Blocks.MELON) || state.is(Blocks.PUMPKIN) || state.is(Blocks.SUGAR_CANE) || state.is(Blocks.BAMBOO)) return Blocks.AIR.defaultBlockState();
+        return state.is(Blocks.SWEET_BERRY_BUSH) ? state.setValue(SweetBerryBushBlock.AGE, 1) : getReplant(drops);
+    }
+
+    private BlockState getReplant(List<ItemStack> items) {
+        Iterator<ItemStack> iterator = items.iterator();
+        while (iterator.hasNext()) {
+            ItemStack stack = iterator.next();
+            if (stack.getItem() instanceof BlockItem b) {
+                if (stack.getCount() == 0) {
+                    iterator.remove();
+                } else stack.shrink(1);
+                return b.getBlock().defaultBlockState();
+            }
         }
-        if (items != null) {
-            storeItems(level, forward, items);
-            level.playSound(null, pos, SoundEvents.CROP_BREAK, SoundSource.BLOCKS);
-        }
+        return Blocks.AIR.defaultBlockState();
     }
 
     private void storeItems(ServerLevel level, BlockPos pos, List<ItemStack> items) {
@@ -85,20 +109,6 @@ public class HarvesterBlockEntity extends BlockEntity implements MenuProvider {
             }
         }
         return false;
-    }
-
-    private BlockState getReplant(List<ItemStack> items) {
-        Iterator<ItemStack> iterator = items.iterator();
-        while (iterator.hasNext()) {
-            ItemStack stack = iterator.next();
-            if (stack.getItem() instanceof BlockItem b) {
-                if (stack.getCount() == 0) {
-                    iterator.remove();
-                } else stack.shrink(1);
-                return b.getBlock().defaultBlockState();
-            }
-        }
-        return Blocks.AIR.defaultBlockState();
     }
 
     public void remove() {

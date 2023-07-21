@@ -83,10 +83,6 @@ public class AutoWorkbenchMenu extends AbstractContainerMenu {
         });
     }
 
-    public boolean isCrafting() {
-        return data.get(0) > 0;
-    }
-
     public int getScaledProgress() {
         int progress = data.get(0);
         int maxProgress = data.get(1);
