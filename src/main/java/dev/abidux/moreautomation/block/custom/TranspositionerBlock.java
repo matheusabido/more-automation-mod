@@ -125,7 +125,7 @@ public class TranspositionerBlock extends BaseEntityBlock {
             Direction targetFacingDirection = targetState.getValue(TranspositionerBlock.FACING);
             BlockPos teleportPosition = targetPosition.relative(targetFacingDirection);
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, AABB.ofSize(new Vec3(frontPosition.getX() + .5f, frontPosition.getY(), frontPosition.getZ() + .5f), 1, 1, 1));
-            TeleportUtil.teleport(entities, level, teleportPosition, targetFacingDirection.getStepY());
+            TeleportUtil.teleport(entities, targetLevel, teleportPosition, targetFacingDirection.getStepY());
         }
     }
 
