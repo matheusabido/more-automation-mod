@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "OEO",
+    "OOO"
+  ],
+  "result": {
+    "item": "moreautomationmod:transpositioner"
+  },
+  "show_notification": true
+}

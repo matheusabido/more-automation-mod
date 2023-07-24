@@ -62,7 +62,6 @@ public class FilterMenu extends AbstractContainerMenu {
         Slot slot = getSlot(index);
         if (!slot.hasItem()) return ItemStack.EMPTY;
         ItemStack stack = slot.getItem();
-        ItemStack copy = stack.copy();
         if (index < 36) {
             Slot filterSlot = getSlot(36);
             boolean passFilter = filterSlot.getItem().getItem() == stack.getItem();
@@ -71,7 +70,7 @@ public class FilterMenu extends AbstractContainerMenu {
         if (stack.getCount() == 0) slot.set(ItemStack.EMPTY);
         else slot.setChanged();
         slot.onTake(player, stack);
-        return copy;
+        return stack.copy();
     }
 
     @Override

@@ -34,14 +34,13 @@ public class PlacerMenu extends AbstractContainerMenu {
         Slot slot = getSlot(index);
         if (!slot.hasItem()) return ItemStack.EMPTY;
         ItemStack stack = slot.getItem();
-        ItemStack copy = stack.copy();
         if (index < 36) {
             if (!moveItemStackTo(stack, 36, 45, false)) return ItemStack.EMPTY;
         } else if (!moveItemStackTo(stack, 0, 36, false)) return ItemStack.EMPTY;
         if (stack.getCount() == 0) slot.set(ItemStack.EMPTY);
         else slot.setChanged();
         slot.onTake(player, stack);
-        return copy;
+        return stack.copy();
     }
 
     @Override

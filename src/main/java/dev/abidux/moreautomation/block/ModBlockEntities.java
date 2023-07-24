@@ -26,4 +26,7 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<FilterBlockEntity>> FILTER = BLOCK_ENTITIES.register("filter",
             () -> BlockEntityType.Builder.of(FilterBlockEntity::new, ModBlocks.FILTER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<TranspositionerBlockEntity>> TRANSPOSITIONER = BLOCK_ENTITIES.register("transpositioner",
+            () -> BlockEntityType.Builder.of(TranspositionerBlockEntity::new, ModBlocks.TRANSPOSITIONER.get()).build(null));
+
 }

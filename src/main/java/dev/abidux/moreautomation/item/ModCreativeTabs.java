@@ -4,8 +4,11 @@ import dev.abidux.moreautomation.MoreAutomationMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Arrays;
 
 public class ModCreativeTabs {
 
@@ -16,11 +19,9 @@ public class ModCreativeTabs {
                     .icon(() -> ModItems.AUTO_WORKBENCH.get().getDefaultInstance())
                     .title(Component.literal("More Automation Mod"))
                     .displayItems((p, output) -> {
-                        output.accept(ModItems.AUTO_WORKBENCH::get);
-                        output.accept(ModItems.PLACER::get);
-                        output.accept(ModItems.HARVESTER::get);
-                        output.accept(ModItems.TRANSPORTER::get);
-                        output.accept(ModItems.FILTER::get);
+                        Arrays.stream(ModItems.class.getDeclaredFields()).filter(f -> f.getType() == RegistryObject.class).map(f -> {
+                                    try {return (RegistryObject<Item>) f.get(null);} catch (IllegalAccessException e) {return null;}
+                                }).map(RegistryObject::get).forEach(output::accept);
                     })
                     .build());
 

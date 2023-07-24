@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "moreautomationmod:block/user",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "moreautomationmod:block/user",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "moreautomationmod:block/user"
+    },
+    "facing=south": {
+      "model": "moreautomationmod:block/user",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "moreautomationmod:block/user",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "moreautomationmod:block/user",
+      "y": 270
+    }
+  }
+}

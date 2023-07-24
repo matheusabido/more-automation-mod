@@ -4,6 +4,8 @@
     "moreautomationmod:placer",
     "moreautomationmod:harvester",
     "moreautomationmod:transporter",
-    "moreautomationmod:filter"
+    "moreautomationmod:filter",
+    "moreautomationmod:user",
+    "moreautomationmod:transpositioner"
   ]
 }

@@ -16,5 +16,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> HARVESTER = BLOCKS.register("harvester", HarvesterBlock::new);
     public static final RegistryObject<Block> TRANSPORTER = BLOCKS.register("transporter", TransporterBlock::new);
     public static final RegistryObject<Block> FILTER = BLOCKS.register("filter", FilterBlock::new);
+    public static final RegistryObject<Block> USER = BLOCKS.register("user", UserBlock::new);
+    public static final RegistryObject<Block> TRANSPOSITIONER = BLOCKS.register("transpositioner", TranspositionerBlock::new);
 
 }

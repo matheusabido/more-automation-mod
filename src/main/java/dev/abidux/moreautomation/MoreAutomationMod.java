@@ -7,6 +7,7 @@ import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchScreen;
 import dev.abidux.moreautomation.gui.filter.FilterScreen;
 import dev.abidux.moreautomation.gui.harvester.HarvesterScreen;
 import dev.abidux.moreautomation.gui.placer.PlacerScreen;
+import dev.abidux.moreautomation.gui.portabletranspositioner.PortableTranspositionerScreen;
 import dev.abidux.moreautomation.item.ModCreativeTabs;
 import dev.abidux.moreautomation.item.ModItems;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -22,7 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(MoreAutomationMod.MOD_ID)
 public class MoreAutomationMod {
-
+    
     public static final String MOD_ID = "moreautomationmod";
     public MoreAutomationMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -52,6 +53,7 @@ public class MoreAutomationMod {
             MenuScreens.register(ModMenuTypes.PLACER.get(), PlacerScreen::new);
             MenuScreens.register(ModMenuTypes.HARVESTER.get(), HarvesterScreen::new);
             MenuScreens.register(ModMenuTypes.FILTER.get(), FilterScreen::new);
+            MenuScreens.register(ModMenuTypes.PORTABLE_TRANSPOSITIONER.get(), PortableTranspositionerScreen::new);
         }
     }
 }

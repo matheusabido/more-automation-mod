@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "moreautomationmod:block/transpositioner",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "moreautomationmod:block/transpositioner",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "moreautomationmod:block/transpositioner"
+    },
+    "facing=south": {
+      "model": "moreautomationmod:block/transpositioner",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "moreautomationmod:block/transpositioner",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "moreautomationmod:block/transpositioner",
+      "y": 270
+    }
+  }
+}

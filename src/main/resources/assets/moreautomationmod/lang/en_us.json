@@ -4,11 +4,25 @@
   "block.moreautomationmod.harvester": "Harvester",
   "block.moreautomationmod.transporter": "Transporter",
   "block.moreautomationmod.filter": "Filter",
+  "block.moreautomationmod.user": "User",
+  "block.moreautomationmod.transpositioner": "Transpositioner",
+  
+  "item.moreautomationmod.transpositioner_remote": "Transpositioner Remote",
+  "item.moreautomationmod.portable_transpositioner": "Portable Transpositioner",
 
-  "messages.press_shift_for_more": "Press SHIFT for more info",
-  "messages.auto_workbench_guide": "Crafts items automatically.\nThe left grid is used to set the recipe, the right grid is the storage.",
-  "messages.placer_guide": "Places blocks right in front of it.\nNeeds redstone signal.",
-  "messages.harvester_guide": "Harvests the crop right in front of it.\nNeeds redstone signal.",
-  "messages.transporter_guide": "Transports items from the container in front of it to the container behind it.",
-  "messages.filter_guide": "Filters items.\nThe yellow slot is for configuration, the other slot will accept only the configured item."
+  "tooltip.press_shift_for_more": "Press SHIFT for more info",
+  "tooltip.auto_workbench_guide": "Crafts items automatically.\nThe left grid is used to set the recipe, the right grid is the storage.",
+  "tooltip.placer_guide": "Places blocks right in front of it.\nNeeds redstone signal.",
+  "tooltip.harvester_guide": "Harvests the crop right in front of it.\nNeeds redstone signal.",
+  "tooltip.transporter_guide": "Transports items from the container in front of it to the container behind it.",
+  "tooltip.filter_guide": "Filters items.\nThe yellow slot is for configuration, the other slot will accept only the configured item.",
+  "tooltip.user_guide": "Uses the block in front of it.\nNeeds redstone signal.",
+  "tooltip.transpositioner_guide": "Teleports the entities in front of it to the linked transpositioner.",
+  "tooltip.transpositioner_remote": "Linked to %d, %d, %d (%s)",
+  "tooltip.transpositioner_remote_guide": "Right-Click on two transpositioners to link them.",
+  "tooltip.portable_transpositioner_guide": "Right-Click to teleport. Shift + Right-Click to fill the Portable Transpositioner with Ender Pearls.",
+
+  "messages.transpositioner.linked": "The transpositioners are linked!",
+  "messages.transpositioner.saved": "The location of this transpositioner is saved.",
+  "messages.portable_transpositioner.linked": "Portable Transpositioner linked!"
 }

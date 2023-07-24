@@ -5,6 +5,7 @@ import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchMenu;
 import dev.abidux.moreautomation.gui.filter.FilterMenu;
 import dev.abidux.moreautomation.gui.harvester.HarvesterMenu;
 import dev.abidux.moreautomation.gui.placer.PlacerMenu;
+import dev.abidux.moreautomation.gui.portabletranspositioner.PortableTranspositionerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,5 +27,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<FilterMenu>> FILTER = MENU_TYPES.register("filter",
             () -> IForgeMenuType.create(FilterMenu::new));
+
+    public static final RegistryObject<MenuType<PortableTranspositionerMenu>> PORTABLE_TRANSPOSITIONER = MENU_TYPES.register("portable_transpositioner",
+            () -> IForgeMenuType.create(PortableTranspositionerMenu::new));
 
 }
