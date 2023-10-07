@@ -61,7 +61,7 @@ public class PlacerMenu extends AbstractContainerMenu {
             }
         }
     }
-
+    
     private void addPlacerSlots() {
         blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             for (int j = 0; j < 3; j++) {

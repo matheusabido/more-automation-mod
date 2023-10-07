@@ -81,7 +81,7 @@ public class PlacerBlock extends BaseEntityBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand pHand, BlockHitResult pHit) {
         if (!level.isClientSide() && level.getBlockEntity(pos) instanceof PlacerBlockEntity entity) {
-                NetworkHooks.openScreen((ServerPlayer) player, entity, pos);
+            NetworkHooks.openScreen((ServerPlayer) player, entity, pos);
         }
         return InteractionResult.sidedSuccess(level.isClientSide());
     }

@@ -48,7 +48,7 @@ public class AutoWorkbenchBlockEntity extends BlockEntity implements MenuProvide
         }
     };
     private final HopperWrapper hopperWrapper = new HopperWrapper(itemHandler,
-            (slot, item) -> slot >= 9 && slot <= 17,
+            (slot, item) -> slot >= 9 && slot <= 17 && isItemCompatible(item),
             (slot, amount) -> slot == 18);
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
@@ -219,6 +219,13 @@ public class AutoWorkbenchBlockEntity extends BlockEntity implements MenuProvide
             map.put(stack.getItem(), map.getOrDefault(stack.getItem(), 0) + stack.getCount());
         }
         return map;
+    }
+
+    private boolean isItemCompatible(ItemStack stack) {
+        for (Ingredient ingredient : craftingIngredients) {
+            if (ingredient.test(stack)) return true;
+        }
+        return false;
     }
 
     public void remove() {
