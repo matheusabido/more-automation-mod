@@ -222,6 +222,7 @@ public class AutoWorkbenchBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private boolean isItemCompatible(ItemStack stack) {
+        if (craftingIngredients == null) return false;
         for (Ingredient ingredient : craftingIngredients) {
             if (ingredient.test(stack)) return true;
         }
