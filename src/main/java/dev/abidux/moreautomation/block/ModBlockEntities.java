@@ -1,7 +1,6 @@
 package dev.abidux.moreautomation.block;
 
 import dev.abidux.moreautomation.MoreAutomationMod;
-import dev.abidux.moreautomation.block.ModBlocks;
 import dev.abidux.moreautomation.block.entities.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -29,4 +28,12 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<TranspositionerBlockEntity>> TRANSPOSITIONER = BLOCK_ENTITIES.register("transpositioner",
             () -> BlockEntityType.Builder.of(TranspositionerBlockEntity::new, ModBlocks.TRANSPOSITIONER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ArmorCollectorBlockEntity>> ARMOR_COLLECTOR = BLOCK_ENTITIES.register("armor_collector",
+            () -> BlockEntityType.Builder.of(ArmorCollectorBlockEntity::new, ModBlocks.ARMOR_COLLECTOR.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ArmorInjectorBlockEntity>> ARMOR_INJECTOR = BLOCK_ENTITIES.register("armor_injector",
+            () -> BlockEntityType.Builder.of(ArmorInjectorBlockEntity::new, ModBlocks.ARMOR_INJECTOR.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<TreeCutterBlockEntity>> TREE_CUTTER = BLOCK_ENTITIES.register("tree_cutter",
+            () -> BlockEntityType.Builder.of(TreeCutterBlockEntity::new, ModBlocks.TREE_CUTTER.get()).build(null));
 }

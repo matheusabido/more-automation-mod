@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "moreautomationmod:block/armor_collector_vertical",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "moreautomationmod:block/armor_collector",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "moreautomationmod:block/armor_collector"
+    },
+    "facing=south": {
+      "model": "moreautomationmod:block/armor_collector",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "moreautomationmod:block/armor_collector_vertical"
+    },
+    "facing=west": {
+      "model": "moreautomationmod:block/armor_collector",
+      "y": 270
+    }
+  }
+}

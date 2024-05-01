@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "moreautomationmod:block/armor_front",
+    "side": "moreautomationmod:block/armor_injector_side"
+  }
+}

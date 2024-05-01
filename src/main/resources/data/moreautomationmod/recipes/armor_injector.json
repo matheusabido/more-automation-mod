@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:iron_chestplate"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "D": {
+      "item": "minecraft:dispenser"
+    }
+  },
+  "pattern": [
+    "IRI",
+    "ICI",
+    "IDI"
+  ],
+  "result": {
+    "item": "moreautomationmod:armor_injector"
+  },
+  "show_notification": true
+}

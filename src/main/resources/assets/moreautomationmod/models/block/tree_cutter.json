@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "moreautomationmod:block/placer_side",
+    "bottom": "moreautomationmod:block/placer_side",
+    "front": "moreautomationmod:block/tree_cutter_front",
+    "side": "moreautomationmod:block/tree_cutter_side"
+  }
+}

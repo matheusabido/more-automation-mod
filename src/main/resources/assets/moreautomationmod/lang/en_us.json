@@ -1,11 +1,14 @@
 {
-  "block.moreautomationmod.auto_workbench": "Auto workbench",
+  "block.moreautomationmod.auto_workbench": "Auto Workbench",
   "block.moreautomationmod.placer": "Placer",
   "block.moreautomationmod.harvester": "Harvester",
   "block.moreautomationmod.transporter": "Transporter",
   "block.moreautomationmod.filter": "Filter",
   "block.moreautomationmod.user": "User",
   "block.moreautomationmod.transpositioner": "Transpositioner",
+  "block.moreautomationmod.armor_collector": "Armor Collector",
+  "block.moreautomationmod.armor_injector": "Armor Injector",
+  "block.moreautomationmod.tree_cutter": "Tree Cutter",
   
   "item.moreautomationmod.transpositioner_remote": "Transpositioner Remote",
   "item.moreautomationmod.portable_transpositioner": "Portable Transpositioner",
@@ -21,6 +24,9 @@
   "tooltip.transpositioner_remote": "Linked to %d, %d, %d (%s)",
   "tooltip.transpositioner_remote_guide": "Right-Click on two transpositioners to link them.",
   "tooltip.portable_transpositioner_guide": "Right-Click to teleport. Shift + Right-Click to fill the Portable Transpositioner with Ender Pearls.",
+  "tooltip.armor_collector": "Collects the target's armor.\nNeeds redstone signal.",
+  "tooltip.armor_injector": "Injects armor to the target.\nNeeds redstone signal.",
+  "tooltip.tree_cutter": "Chops the tree in front of it. Its max range is 5 blocks (not counting height).",
 
   "messages.transpositioner.linked": "The transpositioners are linked!",
   "messages.transpositioner.saved": "The location of this transpositioner is saved.",

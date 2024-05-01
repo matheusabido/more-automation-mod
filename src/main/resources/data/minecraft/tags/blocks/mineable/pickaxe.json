@@ -6,6 +6,9 @@
     "moreautomationmod:transporter",
     "moreautomationmod:filter",
     "moreautomationmod:user",
-    "moreautomationmod:transpositioner"
+    "moreautomationmod:transpositioner",
+    "moreautomationmod:armor_collector",
+    "moreautomationmod:armor_injector",
+    "moreautomationmod:tree_cutter"
   ]
 }

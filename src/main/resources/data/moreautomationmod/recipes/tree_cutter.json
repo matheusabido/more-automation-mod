@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "A": {
+      "item": "minecraft:iron_axe"
+    },
+    "S": {
+      "tag": "minecraft:saplings"
+    }
+  },
+  "pattern": [
+    "III",
+    "IAI",
+    "ISI"
+  ],
+  "result": {
+    "item": "moreautomationmod:tree_cutter"
+  },
+  "show_notification": true
+}

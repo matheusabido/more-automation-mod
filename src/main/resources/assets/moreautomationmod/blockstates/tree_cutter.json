@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "moreautomationmod:block/tree_cutter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "moreautomationmod:block/tree_cutter"
+    },
+    "facing=south": {
+      "model": "moreautomationmod:block/tree_cutter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "moreautomationmod:block/tree_cutter",
+      "y": 270
+    }
+  }
+}

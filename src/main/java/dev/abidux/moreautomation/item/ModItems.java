@@ -34,6 +34,9 @@ public class ModItems {
     public static final RegistryObject<Item> TRANSPOSITIONER = registerBlockItem("transpositioner", ModBlocks.TRANSPOSITIONER, "tooltip.transpositioner_guide");
     public static final RegistryObject<Item> TRANSPOSITIONER_REMOTE = ITEMS.register("transpositioner_remote", TransporterRemoteItem::new);
     public static final RegistryObject<Item> PORTABLE_TRANSPOSITIONER = ITEMS.register("portable_transpositioner", PortableTranspositionerItem::new);
+    public static final RegistryObject<Item> ARMOR_COLLECTOR = registerBlockItem("armor_collector", ModBlocks.ARMOR_COLLECTOR, "tooltip.armor_collector");
+    public static final RegistryObject<Item> ARMOR_INJECTOR = registerBlockItem("armor_injector", ModBlocks.ARMOR_INJECTOR, "tooltip.armor_injector");
+    public static final RegistryObject<Item> TREE_CUTTER = registerBlockItem("tree_cutter", ModBlocks.TREE_CUTTER, "tooltip.tree_cutter");
 
     private static RegistryObject<Item> registerBlockItem(String name, RegistryObject<Block> block, String translatable) {
         return ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()) {

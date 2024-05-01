@@ -3,14 +3,17 @@ package dev.abidux.moreautomation;
 import dev.abidux.moreautomation.block.ModBlocks;
 import dev.abidux.moreautomation.block.ModBlockEntities;
 import dev.abidux.moreautomation.gui.ModMenuTypes;
+import dev.abidux.moreautomation.gui.armor.ArmorScreen;
 import dev.abidux.moreautomation.gui.autoworkbench.AutoWorkbenchScreen;
 import dev.abidux.moreautomation.gui.filter.FilterScreen;
 import dev.abidux.moreautomation.gui.harvester.HarvesterScreen;
 import dev.abidux.moreautomation.gui.placer.PlacerScreen;
 import dev.abidux.moreautomation.gui.portabletranspositioner.PortableTranspositionerScreen;
+import dev.abidux.moreautomation.gui.treecutter.TreeCutterScreen;
 import dev.abidux.moreautomation.item.ModCreativeTabs;
 import dev.abidux.moreautomation.item.ModItems;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -54,6 +57,8 @@ public class MoreAutomationMod {
             MenuScreens.register(ModMenuTypes.HARVESTER.get(), HarvesterScreen::new);
             MenuScreens.register(ModMenuTypes.FILTER.get(), FilterScreen::new);
             MenuScreens.register(ModMenuTypes.PORTABLE_TRANSPOSITIONER.get(), PortableTranspositionerScreen::new);
+            MenuScreens.register(ModMenuTypes.ARMOR.get(), ArmorScreen::new);
+            MenuScreens.register(ModMenuTypes.TREE_CUTTER.get(), TreeCutterScreen::new);
         }
     }
 }
